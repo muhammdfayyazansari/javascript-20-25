@@ -110,47 +110,96 @@
 // }
 
 // // // // ************************************    Question No 15 **************************************************************
-var userpassword = prompt("Enter your password.");
-var matchP = true;
-for(var i=0; i<userpassword.length; i++){
-    var ifnumber = userpassword.charCodeAt(0);
-    var numberCheck = userpassword.charCodeAt(i);
-    if(ifnumber>=48 && ifnumber <=57){
-        matchP = false;
-        document.write("<h1> Entered password: "+ userpassword
-        + "<br> Password can not begin with a number"
-        +" <br> Please enter a valid password</h1>"
-        )
-        break;
-    };
-    if(userpassword.length < 7){
-        matchP = false;
-        document.write(
-        "<h1> Entered password: "+ userpassword
-        + "<br> Password at least 6 characters long."
-        +" <br> Please enter a valid password</h1>"
-        )
-        break;
-    }else if((numberCheck<48 && numberCheck >= 0) || (numberCheck>57 && numberCheck <65) || (numberCheck>91 && numberCheck <96) || (numberCheck>122 && numberCheck<128)){
-        matchP = false;
-        document.write(
-            "<h1> Entered password: "+ userpassword
-            + "<br> <br> Note:-"
-            + "<br> 1) Password should contain only numbers and alphabets."
-            +" <br> 2) Don't use space between characters."
-            +" <br> 2) characters use among 0-9 or a-z or A-Z "
-            +" <br> 3) Please enter a valid password</h1>"
-            )
-        break;
-    }
-    else if(numberCheck>=48 && numberCheck <=57 && numberCheck>=65 && numberCheck <=90 && numberCheck>=97 && numberCheck <=122){
-        matchP = true;
+// var userpassword = prompt("Enter your password.");
+// var matchP = true;
+// for(var i=0; i<userpassword.length; i++){
+//     var a=[];
+//     var ifnumber = userpassword.charCodeAt(0);
+//     var numberCheck = userpassword.charCodeAt(i);
+//     if(ifnumber>=48 && ifnumber <=57){
+//         matchP = false;
+//         document.write("<h1> Entered password: "+ userpassword
+//         + "<br> Password can not begin with a number"
+//         +" <br> Please enter a valid password</h1>"
+//         )
+//         break;
+//     };
+//     if(userpassword.length < 7){
+//         matchP = false;
+//         document.write(
+//         "<h1> Entered password: "+ userpassword
+//         + "<br> Password at least 6 characters long."
+//         +" <br> Please enter a valid password</h1>"
+//         )
+//         break;
+//     }else if((numberCheck<48 && numberCheck >= 0) || (numberCheck>57 && numberCheck <65) || (numberCheck>91 && numberCheck <96) || (numberCheck>122 && numberCheck<128)){
+//         matchP = false;
+//         document.write(
+//             "<h1> Entered password: "+ userpassword
+//             + "<br> <br> Note:-"
+//             + "<br> 1) Password should contain numbers and alphabets."
+//             +" <br> 2) Don't use space between characters."
+//             +" <br> 2) characters use among 0-9 or a-z or A-Z "
+//             +" <br> 3) Please enter a valid password</h1>"
+//             )
+//         break;
+//     }else if(numberCheck>=48 && numberCheck <=57){
+//           a.push("fayyaz");
+//     }
+//     else if((i+1) === userpassword.length){
+//         var b = ["fayyaz"];
+//         if(a != b ){
+//             matchP = false;
+//             document.write(
+//                 "<h1> Entered password: "+ userpassword
+//                 + "<br> <br> Note:- "
+//                 + "<br> 1) Numbers are also required ."
+//                 + "<br> 2) Password should contain numbers and alphabets."
+       
+//                 )
+//             break;
+//         }
+//     }
+//     else if(numberCheck>=48 && numberCheck <=57 && numberCheck>=65 && numberCheck <=90 && numberCheck>=97 && numberCheck <=122){
+//         matchP = true;
+//     }
+// }
+// if(matchP){
+//     document.write(
+//         "<h1> Entered password: "+ userpassword
+//         + "<br> Your Password is match our requirements."
+//         +" <br> Your can go and enter our website.</h1>"
+//         )
+// }
+
+// // // // ************************************    Question No 16 **************************************************************
+// var university = "University of Karachi";
+// var convert = university.split("");
+// for(var i=0; i<university.length; i++){
+//     document.write(university[i]+"<br>");
+// }
+
+// // // // ************************************    Question No 17 **************************************************************
+// var userpakistan = prompt("Enter a word");
+// var lastWord = userpakistan.slice((userpakistan.length -1));
+// document.write(
+//     "<h1> User Input: "+ userpakistan
+//     + "<br> Last Character of user input: "+ lastWord
+// )
+
+
+// // // // ************************************    Question No 18 **************************************************************
+var sentence = "The quick brown fox jumps over the lazy dog";
+var newSentence = sentence.split(" ");
+var count = [];
+for(var i=0; i<newSentence.length; i++){
+    if(newSentence[i].toLowerCase() == "the"){
+        var a = newSentence[i].toLowerCase();
+        count.push(a)
     }
 }
-if(matchP){
-    document.write(
-        "<h1> Entered password: "+ userpassword
-        + "<br> Your Password is match our requirements."
-        +" <br> Your can go and enter our website.</h1>"
-        )
-}
+document.write(
+    "<h1> Text: " +sentence+
+    "<br> There are "+ count.length+ " occurence of word 'the' "
+
+)
